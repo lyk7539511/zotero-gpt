@@ -243,7 +243,7 @@ export async function getGPTResponseByOpenAI(requestText: string) {
         .show()
     }
   }
-  responseText = textArr.join("")
+  responseText = textArr.join("").replace(/^\uFEFF/, '')
   ztoolkit.log("responseText", responseText)
   // if (views._ids.map(i=>i.id).indexOf(id) >= 0 ) {
   //   views.setText(responseText, true)
